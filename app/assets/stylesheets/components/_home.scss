@@ -1,11 +1,88 @@
+// .banner {
+//   color: white;
+//   text-align: center;
+//   background-size: cover !important;
+//   width: 100vw;
+//   display: flex;
+//   background-image:url("http://res.cloudinary.com/dckqwftrl/image/upload/v1542561974/bkg-1_s2r4ku.png");
+//   // display: flex;
+//   // align-items: center;
+//   // justify-content: center;
+// }
+
 .banner {
-  color: white;
-  text-align: center;
+  // color: white;
+  // text-align: center;
   background-size: cover !important;
-  width: 100vw;
+  // width: 100vw;
+  height: 600px;
   display: flex;
-  // background-image:url("https://res.cloudinary.com/dckqwftrl/image/upload/v1542541496/home_kc1umd.png");
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  };
+
+.banner-1{
+    background-image:url("https://res.cloudinary.com/dckqwftrl/image/upload/v1542564299/dune_eh6n2i.jpg");
+
+    height: 100vh;
+    background-size: cover !important;
+  }
+
+.flex-home{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 140px);
+}
+
+.tagbox{
+  width: 100%;
+  // background-color: red;
+}
+
+.tagline{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  font-size: 70px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+ .subtagline{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.banner-2{
+    background-image:url("http://res.cloudinary.com/dckqwftrl/image/upload/c_scale,h_551/v1542561974/bkg-1_s2r4ku.png");
+  }
+
+.banner-4{
+    background-image:url("http://res.cloudinary.com/dckqwftrl/image/upload/c_scale,h_551/v1542561974/bkg-1_s2r4ku.png");
+  }
+
+.box-left{
+  margin-left: 140px;
+}
+
+.box-right{
+  margin-right: 140px;
+  padding-left: 20px;
+}
+
+.box-small{
+  width: 40%
+}
+.box-big{
+  width: 40%
+}
+
+.h1{
+  color: red !important;
 }

@@ -1,11 +1,12 @@
-<div class="navbar-wedding">
+<div class="navbar-home-wedding">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wedding-brand" do %>
-    <%= cl_image_tag("logo_bz4yef.png", :crop=>"fill") %>
+    <%#= cl_image_tag("logo_bz4yef.png", :crop=>"fill") %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wedding-right hidden-xs hidden-sm">
+
   <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %>
 
     <% if user_signed_in? %>

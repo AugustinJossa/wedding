@@ -1,0 +1,46 @@
+<%= render 'shared/navbar_home' %>
+<div class="container">
+  <div class="row">
+    <div class="title">Transport</div>
+
+<div class="wrapper">
+  <h1>Quick and Simple Tabs</h1>
+  <p>A quick and easy method for tabs that supports multiple tab groups on one page.</p>
+<ul class="tabs clearfix" data-tabgroup="first-tab-group">
+  <li><a href="#tab1" class="active">Voiture</a></li>
+  <li><a href="#tab2">Train</a></li>
+  <li><a href="#tab3">Avion</a></li>
+  <li><a href="#tab4">Felix</a></li>
+</ul>
+<section id="first-tab-group" class="tabgroup">
+  <div id="tab1">
+    <h2>Voiture</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla deserunt consectetur ratione id tempore laborum laudantium facilis reprehenderit beatae dolores ipsum nesciunt alias iusto dicta eius itaque blanditiis modi velit.</p>
+  </div>
+  <div id="tab2">
+    <h2>Train</h2>
+    <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+  </div>
+  <div id="tab3">
+    <h2>Avion</h2>
+    <p>Atque ratione soluta laboriosam illo inventore amet ipsum aliquam assumenda harum provident nam accusantium neque debitis obcaecati maxime officia saepe ad ducimus in quam libero vero quasi. Saepe sit nisi?</p>
+  </div>
+  <div id="tab4">
+    <h2>Felix</h2>
+    <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne! </p>
+    <a href="https://www.felix-app.com/">Pour tester c'est ici</a><br>
+    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>568, :crop=>"scale") %>
+  </div>
+  <!-- <div id="tab5">
+    <h2>Heading 5</h2>
+    <p>Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.</p>
+  </div> -->
+</section>
+</div>
+
+  </div>
+  <div class="row">
+    <div class="title">Hebergement</div>
+  </div>
+</div>
+
