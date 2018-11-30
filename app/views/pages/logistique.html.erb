@@ -1,11 +1,9 @@
-<%= render 'shared/navbar_home' %>
+<%= render 'shared/navbar' %>
 <div class="container">
   <div class="row">
     <div class="title">Transport</div>
 
 <div class="wrapper">
-  <h1>Quick and Simple Tabs</h1>
-  <p>A quick and easy method for tabs that supports multiple tab groups on one page.</p>
 <ul class="tabs clearfix" data-tabgroup="first-tab-group">
   <li><a href="#tab1" class="active">Voiture</a></li>
   <li><a href="#tab2">Train</a></li>
@@ -15,7 +13,7 @@
 <section id="first-tab-group" class="tabgroup">
   <div id="tab1">
     <h2>Voiture</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla deserunt consectetur ratione id tempore laborum laudantium facilis reprehenderit beatae dolores ipsum nesciunt alias iusto dicta eius itaque blanditiis modi velit.</p>
+    <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ6RvBMyOeVA0RdHUFjDhHLwA&key=AIzaSyCZZ5bSvAwuJ9MyDqjifDZvRl-t03K7nhA" allowfullscreen></iframe>
   </div>
   <div id="tab2">
     <h2>Train</h2>
@@ -23,7 +21,14 @@
   </div>
   <div id="tab3">
     <h2>Avion</h2>
-    <p>Atque ratione soluta laboriosam illo inventore amet ipsum aliquam assumenda harum provident nam accusantium neque debitis obcaecati maxime officia saepe ad ducimus in quam libero vero quasi. Saepe sit nisi?</p>
+    <ul>
+      For people coming by plane, you should go to the Bordeaux airport. Here you have two options :
+      <li>A 80€ taxi going directly to Arcachon</li>
+      <li>A 30min bus going to the Bordeaux station <a href="https://30direct.com/horaires/">(here is a timetable)</a>. Then a one hour train (11€) going to Arcachon. </li>
+        Sign-up to get an email when the booking will be open
+
+
+    </ul>
   </div>
   <div id="tab4">
     <h2>Felix</h2>

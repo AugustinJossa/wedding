@@ -6,14 +6,14 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wedding-right hidden-xs hidden-sm">
-  <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %>
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wedding-item navbar-wedding-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wedding-item navbar-wedding-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Home", root_path, class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Profile", user_profile_path(@user), class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Movies", "#", class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Games", "#", class: "navbar-wedding-item navbar-wedding-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wedding-item">
@@ -40,6 +40,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wedding-item navbar-wedding-link" %>
     <% end %>
   </div>
