@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   def logistique
     @user = current_user
+    @hotels_bp = Hotel.where(category: "bon plans")
+    @hotels_tav = Hotel.where(category: "tir au vol")
+    @hotels_eglise = Hotel.where(category: "eglise")
+    @hotels_autres = Hotel.where(category: "autres")
   end
 
 end

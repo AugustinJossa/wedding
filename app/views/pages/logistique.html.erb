@@ -3,49 +3,130 @@
   <div class="row">
     <div class="title">Transport</div>
 
-<div class="wrapper">
-<ul class="tabs clearfix" data-tabgroup="first-tab-group">
-  <li><a href="#tab1" class="active">Voiture</a></li>
-  <li><a href="#tab2">Train</a></li>
-  <li><a href="#tab3">Avion</a></li>
-  <li><a href="#tab4">Felix</a></li>
-</ul>
-<section id="first-tab-group" class="tabgroup">
-  <div id="tab1">
-    <h2>Voiture</h2>
-    <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ6RvBMyOeVA0RdHUFjDhHLwA&key=AIzaSyCZZ5bSvAwuJ9MyDqjifDZvRl-t03K7nhA" allowfullscreen></iframe>
-  </div>
-  <div id="tab2">
-    <h2>Train</h2>
-    <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
-  </div>
-  <div id="tab3">
-    <h2>Avion</h2>
-    <ul>
-      For people coming by plane, you should go to the Bordeaux airport. Here you have two options :
-      <li>A 80€ taxi going directly to Arcachon</li>
-      <li>A 30min bus going to the Bordeaux station <a href="https://30direct.com/horaires/">(here is a timetable)</a>. Then a one hour train (11€) going to Arcachon. </li>
-        Sign-up to get an email when the booking will be open
-
-
+    <div class="wrapper">
+    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+      <li><a href="#tab1" class="active">Voiture</a></li>
+      <li><a href="#tab2">Train</a></li>
+      <li><a href="#tab3">Avion</a></li>
+      <li><a href="#tab4">Felix</a></li>
     </ul>
-  </div>
-  <div id="tab4">
-    <h2>Felix</h2>
-    <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne! </p>
-    <a href="https://www.felix-app.com/">Pour tester c'est ici</a><br>
-    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>568, :crop=>"scale") %>
-  </div>
-  <!-- <div id="tab5">
-    <h2>Heading 5</h2>
-    <p>Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.</p>
-  </div> -->
-</section>
-</div>
+    <section id="first-tab-group" class="tabgroup">
+      <div id="tab1">
+        <h2>Voiture</h2>
+        <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ6RvBMyOeVA0RdHUFjDhHLwA&key=AIzaSyCZZ5bSvAwuJ9MyDqjifDZvRl-t03K7nhA" allowfullscreen></iframe>
+      </div>
+      <div id="tab2">
+        <h2>Train</h2>
+        <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+      </div>
+      <div id="tab3">
+        <h2>Avion</h2>
+        <ul>
+          For people coming by plane, you should go to the Bordeaux airport. Here you have two options :
+          <li>A 80€ taxi going directly to Arcachon</li>
+          <li>A 30min bus going to the Bordeaux station <a href="https://30direct.com/horaires/">(here is a timetable)</a>. Then a one hour train (11€) going to Arcachon. </li>
+            Sign-up to get an email when the booking will be open
+
+
+        </ul>
+      </div>
+      <div id="tab4">
+        <h2>Felix</h2>
+        <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne! </p>
+        <a href="https://www.felix-app.com/">Pour tester c'est ici</a><br>
+        <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>568, :crop=>"scale") %>
+      </div>
+    </section>
+    </div>
 
   </div>
   <div class="row">
     <div class="title">Hebergement</div>
+    <br><br>
+
+    <div class="wrapper2">
+      <ul class="tabs2 clearfix2" data-tabgroup2="first-tab-group2">
+        <li><a href="#tab5" class="active">Bon plans!</a></li>
+        <li><a href="#tab6" class="active">Proche du tir au vol</a></li>
+        <li><a href="#tab7">Proche de l'église</a></li>
+        <li><a href="#tab8">Autres</a></li>
+      </ul>
+      <section id="first-tab-group2" class="tabgroup2">
+        <div id="tab5" class="down-tab">
+          <h2>Hôtels</h2>
+            <br>
+            <div class="hidden-xs hidden-sm">
+            <% @hotels_tav.each do |hotel| %>
+              <a href=<%= "#{hotel.website}" %> class="link">
+              <div class="logistic-box">
+                <div class="logistic-left">
+                    <div class="">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                </div>
+                <div class="logistic-middle">
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                <div class="logistic-right">
+                  <div class="price"><%= hotel.price %></div>
+                  <%= hotel.price_text %>
+                </div>
+              </div>
+              </a>
+              <br>
+            </div>
+
+
+            <div class="hidden-md hidden-lg hidden-xl">
+              <a href="" class="link">
+              <div class="logistic-box-mobile">
+                    <div class="logistic-image-center">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                <div class="text-center">
+                  <br>
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                  <br>
+                  <div class="price"><%= hotel.price %></div>
+                  <div class="text-center"><%= hotel.price_text %></div>
+              </div>
+            </a>
+            <br>
+
+            </div>
+            <% end %>
+            <br>
+        </div>
+
+        <div id="tab6" class="down-tab">
+          <h2>Airbnb</h2>
+          <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+        </div>
+      </section>
+      </div>
+
+    <br><br>
   </div>
 </div>
-
+<%= render 'shared/footer' %>
