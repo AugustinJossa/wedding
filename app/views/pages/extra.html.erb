@@ -16,8 +16,9 @@
           <%= f.submit "Add a movie", class: "btn btn-primary" %>
         <% end %>
 
+        <br>
 
-            <p>Merci pour ce coup de main, on a vraiment hâte de vous vous voir au mariage 😍 !!</p>
+        <p>Merci pour ce coup de main, on a vraiment hâte de vous vous voir au mariage 😍 !!</p>
 
     <br><br>
 
@@ -34,9 +35,11 @@ html_doc = Nokogiri::HTML(html_file) %>
 
 <div class="col-xs-12 col-sm-3">
   <div class="movie-box">
-    <div class="movie-img">
+    <a href="<%= movie.url %>" target="_blank">
+      <div class="movie-img">
       <img src="<%= html_doc.search('.thumbnail-img').attribute('src').value %>"> <br>
     </div>
+    </a>
     <div class="movie-title">
       <%= html_doc.search('.titlebar-title-lg').text.strip%>
     </div>
