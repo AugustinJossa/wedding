@@ -1,47 +1,18 @@
 <div class="navbar-wedding">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wedding-brand" do %>
-    <%= cl_image_tag("logo_bz4yef.png", :crop=>"fill") %>
+    <%= cl_image_tag("logo_bz4yef.png", :crop=>"scale", :width=>200,) %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wedding-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "Home", root_path, class: "navbar-wedding-item navbar-wedding-link" %>
-      <%= link_to "Profile", user_profile_path(@user), class: "navbar-wedding-item navbar-wedding-link" %>
-      <%= link_to "Movies", "#", class: "navbar-wedding-item navbar-wedding-link" %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wedding-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewedding.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wedding-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wedding-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
+      <%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-wedding-link" %>
       <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wedding-item navbar-wedding-link" %>
-    <% end %>
+      <%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-wedding-link" %>
+
+      <%#= link_to t(".sign_up", default: "RSVP"), new_user_session_path, class: "navbar-wedding-item navbar-wedding-link" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -49,9 +20,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wedding-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
+        <li><%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
+        <li><%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
+        <li><%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
       </ul>
     </div>
   </div>

@@ -1,38 +1,61 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <div class="row">
-    <div class="title">Transport</div>
+    <div class="title hidden-xs">Transport</div>
+    <div class="title visible-xs" style="font-size: 50px">Transports</div>
 
     <div class="wrapper">
     <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-      <li><a href="#tab1" class="active">Voiture</a></li>
-      <li><a href="#tab2">Train</a></li>
+      <li><a href="#tab1" class="active">Train</a></li>
+      <li><a href="#tab2">Voiture</a></li>
       <li><a href="#tab3">Avion</a></li>
       <li><a href="#tab4">Felix</a></li>
     </ul>
     <section id="first-tab-group" class="tabgroup">
       <div id="tab1">
-        <h2>Voiture</h2>
-        <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ6RvBMyOeVA0RdHUFjDhHLwA&key=AIzaSyCZZ5bSvAwuJ9MyDqjifDZvRl-t03K7nhA" allowfullscreen></iframe>
+        <h2>🚄 Train</h2>
+        <p>Pour venir,  nous vous conseillons de prendre le train (direct Paris > Arcachon, entre 3 et 4h). <br><br>
+        Sur place pas besoin de voiture. Un bus vous permettra de rejoindre facilement le Moulleau, puis tout est accessible à pied.
+        <br>
+        Pour ceux qui veulent se ballader, vous pourrez louer des vélos chez <a href="https://locabeach.com/" target="_blank">Locabeach Moulleau</a>.
+        <br><br>
+        Nous vous préviendrons quand les réservations de billets de train ouvriront (3 mois avant)
+        </p>
       </div>
       <div id="tab2">
-        <h2>Train</h2>
-        <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+        <h2>🚗 Voiture</h2>
+        <p>Si vous préférez la voiture, il vous faudra compter 7h.
+        <br>Attention au passage de la rocade Bordelaise, très souvent embouteillé. Par ailleurs, le jambon braisé est excellent à l'aire d'autoroute après Angoulême. </p>
+        <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJD7fiBh9u5kcRYJSMaMOCCwQ&destination=place_id:ChIJ6RvBMyOeVA0RdHUFjDhHLwA&key=AIzaSyCZZ5bSvAwuJ9MyDqjifDZvRl-t03K7nhA" allowfullscreen></iframe>
       </div>
       <div id="tab3">
-        <h2>Avion</h2>
+        <h2>🛩 Plane</h2>
         <ul>
-          For people coming by plane, you should go to the Bordeaux airport. Here you have two options :
+          For international travels, you should take a plane to Bordeaux Airport. <br>
+          Once at the airport, you have different options: <br><br>
+
+          <li style="margin-left: 40px;">A 15€ taxi to Pessac, where you can catch a 45min train to Arcachon (our favorite option)</li>
+          <li style="margin-left: 40px;">A 30min bus to Bordeaux train station, where you can catch a 1h train to Arcachon</li>
+          <li style="margin-left: 40px;">A 120€ taxi to Arcachon</li>
+          <br>
+
+          A direct London > Bordeaux train might open next year, keep an eye on it!
+
+
+
+
+
+          <!-- For people coming by plane, you should go to the Bordeaux airport. Here you have two options :
           <li>A 80€ taxi going directly to Arcachon</li>
           <li>A 30min bus going to the Bordeaux station <a href="https://30direct.com/horaires/">(here is a timetable)</a>. Then a one hour train (11€) going to Arcachon. </li>
             Sign-up to get an email when the booking will be open
-
+ -->
 
         </ul>
       </div>
       <div id="tab4">
-        <h2>Felix</h2>
-        <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne! </p>
+        <h2>🛵 Felix</h2>
+        <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne ! </p>
         <a href="https://www.felix-app.com/" target="_blank">Pour tester c'est ici
         <br>
         <%= cl_image_tag("felix2_ixvm0n", :width=>400, :crop=>"scale") %></a><br>
@@ -43,288 +66,43 @@
 
   </div>
   <div class="row">
-    <div class="title">Hebergement</div>
+    <div class="title hidden-xs">Hébergements</div>
+    <div class="title visible-xs" style="font-size: 50px">Hébergements</div>
     <br><br>
 
     <div class="wrapper2">
       <ul class="tabs2 clearfix2" data-tabgroup2="first-tab-group2">
-        <li><a href="#tab5" class="active">Bon plans!</a></li>
+        <li><a href="#tab5" class="active">Bon plans !</a></li>
         <li><a href="#tab6" class="active">Proche du tir au vol</a></li>
         <li><a href="#tab7">Proche de l'église</a></li>
         <li><a href="#tab8">Autres</a></li>
       </ul>
       <section id="first-tab-group2" class="tabgroup2">
         <div id="tab5" class="down-tab">
-          <h2>Hôtels</h2>
+          <h2>Bons plans</h2>
             <br>
-            <div class="hidden-xs hidden-sm">
-            <% unless @hotels_bp.nil?%>
-              <% @hotels_tav.each do |hotel| %>
-              <a href=<%= "#{hotel.website}" %> class="link">
-              <div class="logistic-box">
-                <div class="logistic-left">
-                    <div class="">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                </div>
-                <div class="logistic-middle">
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                <div class="logistic-right">
-                  <div class="price"><%= hotel.price %></div>
-                  <%= hotel.price_text %>
-                </div>
-              </div>
-              </a>
-              <br>
-            </div>
-
-
-            <div class="hidden-md hidden-lg hidden-xl">
-              <a href="" class="link">
-              <div class="logistic-box-mobile">
-                    <div class="logistic-image-center">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                <div class="text-center">
-                  <br>
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                  <br>
-                  <div class="price"><%= hotel.price %></div>
-                  <div class="text-center"><%= hotel.price_text %></div>
-              </div>
-            </a>
-            <br>
-
-            </div>
-            <% end %>
-            <% end %>
+            <%= render 'cards2' %>
             <br>
         </div>
-
         <div id="tab6" class="down-tab">
-          <h2>Hôtels</h2>
+          <h2>Hôtels proches du tir au vol</h2>
             <br>
-            <div class="hidden-xs hidden-sm">
-            <% @hotels_tav.each do |hotel| %>
-              <a href=<%= "#{hotel.website}" %> class="link">
-              <div class="logistic-box">
-                <div class="logistic-left">
-                    <div class="">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                </div>
-                <div class="logistic-middle">
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                <div class="logistic-right">
-                  <div class="price"><%= hotel.price %></div>
-                  <%= hotel.price_text %>
-                </div>
-              </div>
-              </a>
-              <br>
-            </div>
-
-
-            <div class="hidden-md hidden-lg hidden-xl">
-              <a href="" class="link">
-              <div class="logistic-box-mobile">
-                    <div class="logistic-image-center">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                <div class="text-center">
-                  <br>
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                  <br>
-                  <div class="price"><%= hotel.price %></div>
-                  <div class="text-center"><%= hotel.price_text %></div>
-              </div>
-            </a>
-            <br>
-
-            </div>
-            <% end %>
+            <%= render "cards" , el: @hotels_tav%>
             <br>
         </div>
-
-
-
         <div id="tab7" class="down-tab">
-          <h2>Hôtels</h2>
+          <h2>Hôtels proches de l'église</h2>
             <br>
-            <div class="hidden-xs hidden-sm">
-            <% @hotels_tav.each do |hotel| %>
-              <a href=<%= "#{hotel.website}" %> class="link">
-              <div class="logistic-box">
-                <div class="logistic-left">
-                    <div class="">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                </div>
-                <div class="logistic-middle">
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                <div class="logistic-right">
-                  <div class="price"><%= hotel.price %></div>
-                  <%= hotel.price_text %>
-                </div>
-              </div>
-              </a>
-              <br>
-            </div>
-
-
-            <div class="hidden-md hidden-lg hidden-xl">
-              <a href="" class="link">
-              <div class="logistic-box-mobile">
-                    <div class="logistic-image-center">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                <div class="text-center">
-                  <br>
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                  <br>
-                  <div class="price"><%= hotel.price %></div>
-                  <div class="text-center"><%= hotel.price_text %></div>
-              </div>
-            </a>
+            <%= render "cards" , el: @hotels_eglise%>
             <br>
-
-            </div>
-            <% end %>
+        </div>
+        <div id="tab8" class="down-tab">
+          <h2>Autres</h2>
+            <br>
+            <%= render "cards" , el: @hotels_autres%>
             <br>
         </div>
 
-
-
-        <div id="tab8" class="down-tab">
-          <h2>Hôtels</h2>
-            <br>
-            <div class="hidden-xs hidden-sm">
-            <% @hotels_tav.each do |hotel| %>
-              <a href=<%= "#{hotel.website}" %> class="link">
-              <div class="logistic-box">
-                <div class="logistic-left">
-                    <div class="">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                </div>
-                <div class="logistic-middle">
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                <div class="logistic-right">
-                  <div class="price"><%= hotel.price %></div>
-                  <%= hotel.price_text %>
-                </div>
-              </div>
-              </a>
-              <br>
-            </div>
-
-
-            <div class="hidden-md hidden-lg hidden-xl">
-              <a href="" class="link">
-              <div class="logistic-box-mobile">
-                    <div class="logistic-image-center">
-                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
-                    </div>
-                <div class="text-center">
-                  <br>
-                  <div class="hotel-name"><%= hotel.name %></div>
-                  <% i=1
-                  while i <= hotel.star
-                  %>
-                  <i class="far fa-star"></i>
-                  <% i +=1 %>
-                  <% end %>
-                  <br>
-                  <%= hotel.desc %> <br>
-                  <%= hotel.adress %> <br>
-                  <%= hotel.phone %>
-                </div>
-                  <br>
-                  <div class="price"><%= hotel.price %></div>
-                  <div class="text-center"><%= hotel.price_text %></div>
-              </div>
-            </a>
-            <br>
-
-            </div>
-            <% end %>
             <br>
         </div>
       </section>

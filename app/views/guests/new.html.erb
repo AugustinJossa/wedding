@@ -1,0 +1,28 @@
+<%= render 'shared/navbar' %>
+<div class="container" style= "min-height: calc(100vh - 140px)">
+  <div class="box">
+    <div class="">
+      <div class="row">
+        <h1>Vous pourrez venir ?</h1>
+        <br>
+        On a trop hâte de vous avoir parmi nous le 30 août. <br> D'ici là on a besoin de quelques infos pour organiser ce bel évènement !<br><br>
+
+        <%= simple_form_for [@guest] do |f| %>
+            <%= f.input :first_name, label: 'Prénom'%>
+            <%= f.input :last_name, label: 'Nom'%>
+            <%= f.input :photo, hint: "Nous avons besoin d'une photo de vous pour une animation du mariage..." %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :food, label: 'Un régime alimentaire à signaler?', collection: ["none", "que du gras", "végératien", "vegan", "gluten free"]%>
+            <%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?'%>
+            <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?'%>
+            <%= f.input :train_alarm, label: 'On vous prévient quand les billets de train ouvrent ?'%>
+            <%= f.button :submit,"Valider", class: "btn-primary"%>
+          <% end %>
+
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

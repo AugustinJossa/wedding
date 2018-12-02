@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_134141) do
+ActiveRecord::Schema.define(version: 2018_12_02_192712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "guests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "food", default: "none"
+    t.boolean "civil_wed"
+    t.boolean "sunday"
+    t.string "photo"
+    t.string "desc"
+    t.string "film1"
+    t.string "film2"
+    t.string "film3"
+    t.boolean "train_alarm"
+  end
 
   create_table "hotels", force: :cascade do |t|
     t.string "name"
@@ -27,6 +43,18 @@ ActiveRecord::Schema.define(version: 2018_12_02_134141) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "star"
+    t.string "pic"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "photo"
+    t.string "desc"
+    t.string "press_star"
+    t.string "public_star"
+    t.string "url"
   end
 
   create_table "users", force: :cascade do |t|

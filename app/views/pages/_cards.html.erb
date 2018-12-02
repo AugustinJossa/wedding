@@ -1,0 +1,61 @@
+<% el.each do |hotel|  %>
+
+  <div class="hidden-xs hidden-sm">
+    <a href="<%= hotel.website %>" class="link" target="_blank">
+      <div class="logistic-box">
+        <div class="logistic-left">
+            <div class="">
+            <%= cl_image_tag("#{hotel.pic}.jpg", :width=>180, :crop=>"scale")%>
+            </div>
+        </div>
+        <div class="logistic-middle">
+          <div class="hotel-name"><%= hotel.name %></div>
+          <% i=1
+          while i <= hotel.star
+          %>
+          <i class="far fa-star"></i>
+          <% i +=1 %>
+          <% end %>
+          <br>
+          <%= hotel.desc %> <br>
+          <%= hotel.adress %> <br>
+          <%= hotel.phone %>
+        </div>
+        <div class="logistic-right">
+          <div class="price"><%= hotel.price %></div>
+          <div class="price-text"><%= hotel.price_text %></div>
+        </div>
+      </div>
+      </a>
+      <br>
+  </div>
+
+  <div class="visible-xs visible-sm">
+    <a href="<%= hotel.website %>" class="link" target="_blank">
+      <div class="logistic-box-mobile">
+            <div class="logistic-image-center">
+            <%= cl_image_tag("#{hotel.pic}.jpg", :width=>180, :crop=>"scale")%>
+            </div>
+        <div class="text-center">
+          <br>
+          <div class="hotel-name"><%= hotel.name %></div>
+          <% i=1
+          while i <= hotel.star
+          %>
+          <i class="far fa-star"></i>
+          <% i +=1 %>
+          <% end %>
+          <br>
+          <%= hotel.desc %> <br>
+          <%= hotel.adress %> <br>
+          <%= hotel.phone %>
+        </div>
+          <br>
+          <div class="price"><%= hotel.price %></div>
+          <div class="text-center"><%= hotel.price_text %></div>
+      </div>
+    </a>
+    <br>
+  </div>
+
+<% end %>

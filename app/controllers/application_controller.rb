@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
     @hotels_autres = Hotel.where(category: "autres")
   end
 
+  # def rsvp
+  #   # @guest = Guest.rsvp
+  # end
+
+  def extra
+    @movie = Movie.new
+  end
+
+
+
 end

@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def profile
+    @movies = Movie.all
+  end
+
   def edit
     @user = current_user
   end
