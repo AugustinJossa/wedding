@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+# gem 'open-uri'
+gem 'nokogiri'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

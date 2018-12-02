@@ -1,0 +1,40 @@
+.control-group{
+  // font-weight: 100;
+}
+
+.form-control {
+  width: 360px;
+  font-size: 14px;
+  color: black !important;
+}
+
+.form-control-label {
+  // font-weight: 300;
+  font-size: 14px;
+  color: $gray;
+  margin-bottom: 0px;
+}
+
+.form-check-label{
+  font-size: 14px;
+  color: black;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.centered-form{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.centered-form-box{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-text.text-muted{
+  color: #777777;
+  font-size: 12px;
+  font-style: italic;
+}

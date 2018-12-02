@@ -33,8 +33,10 @@
       <div id="tab4">
         <h2>Felix</h2>
         <p>Un peu de pub pour nos amis de Felix, leader du taxi moto en région parisienne! </p>
-        <a href="https://www.felix-app.com/">Pour tester c'est ici</a><br>
-        <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>568, :crop=>"scale") %>
+        <a href="https://www.felix-app.com/" target="_blank">Pour tester c'est ici
+        <br>
+        <%= cl_image_tag("felix2_ixvm0n", :width=>400, :crop=>"scale") %></a><br>
+
       </div>
     </section>
     </div>
@@ -53,6 +55,75 @@
       </ul>
       <section id="first-tab-group2" class="tabgroup2">
         <div id="tab5" class="down-tab">
+          <h2>Hôtels</h2>
+            <br>
+            <div class="hidden-xs hidden-sm">
+            <% unless @hotels_bp.nil?%>
+              <% @hotels_tav.each do |hotel| %>
+              <a href=<%= "#{hotel.website}" %> class="link">
+              <div class="logistic-box">
+                <div class="logistic-left">
+                    <div class="">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                </div>
+                <div class="logistic-middle">
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                <div class="logistic-right">
+                  <div class="price"><%= hotel.price %></div>
+                  <%= hotel.price_text %>
+                </div>
+              </div>
+              </a>
+              <br>
+            </div>
+
+
+            <div class="hidden-md hidden-lg hidden-xl">
+              <a href="" class="link">
+              <div class="logistic-box-mobile">
+                    <div class="logistic-image-center">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                <div class="text-center">
+                  <br>
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                  <br>
+                  <div class="price"><%= hotel.price %></div>
+                  <div class="text-center"><%= hotel.price_text %></div>
+              </div>
+            </a>
+            <br>
+
+            </div>
+            <% end %>
+            <% end %>
+            <br>
+        </div>
+
+        <div id="tab6" class="down-tab">
           <h2>Hôtels</h2>
             <br>
             <div class="hidden-xs hidden-sm">
@@ -119,9 +190,142 @@
             <br>
         </div>
 
-        <div id="tab6" class="down-tab">
-          <h2>Airbnb</h2>
-          <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+
+
+        <div id="tab7" class="down-tab">
+          <h2>Hôtels</h2>
+            <br>
+            <div class="hidden-xs hidden-sm">
+            <% @hotels_tav.each do |hotel| %>
+              <a href=<%= "#{hotel.website}" %> class="link">
+              <div class="logistic-box">
+                <div class="logistic-left">
+                    <div class="">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                </div>
+                <div class="logistic-middle">
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                <div class="logistic-right">
+                  <div class="price"><%= hotel.price %></div>
+                  <%= hotel.price_text %>
+                </div>
+              </div>
+              </a>
+              <br>
+            </div>
+
+
+            <div class="hidden-md hidden-lg hidden-xl">
+              <a href="" class="link">
+              <div class="logistic-box-mobile">
+                    <div class="logistic-image-center">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                <div class="text-center">
+                  <br>
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                  <br>
+                  <div class="price"><%= hotel.price %></div>
+                  <div class="text-center"><%= hotel.price_text %></div>
+              </div>
+            </a>
+            <br>
+
+            </div>
+            <% end %>
+            <br>
+        </div>
+
+
+
+        <div id="tab8" class="down-tab">
+          <h2>Hôtels</h2>
+            <br>
+            <div class="hidden-xs hidden-sm">
+            <% @hotels_tav.each do |hotel| %>
+              <a href=<%= "#{hotel.website}" %> class="link">
+              <div class="logistic-box">
+                <div class="logistic-left">
+                    <div class="">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                </div>
+                <div class="logistic-middle">
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                <div class="logistic-right">
+                  <div class="price"><%= hotel.price %></div>
+                  <%= hotel.price_text %>
+                </div>
+              </div>
+              </a>
+              <br>
+            </div>
+
+
+            <div class="hidden-md hidden-lg hidden-xl">
+              <a href="" class="link">
+              <div class="logistic-box-mobile">
+                    <div class="logistic-image-center">
+                    <%= cl_image_tag("felix-equipe_bwcosp.jpg", :width=>180, :crop=>"scale")%>
+                    </div>
+                <div class="text-center">
+                  <br>
+                  <div class="hotel-name"><%= hotel.name %></div>
+                  <% i=1
+                  while i <= hotel.star
+                  %>
+                  <i class="far fa-star"></i>
+                  <% i +=1 %>
+                  <% end %>
+                  <br>
+                  <%= hotel.desc %> <br>
+                  <%= hotel.adress %> <br>
+                  <%= hotel.phone %>
+                </div>
+                  <br>
+                  <div class="price"><%= hotel.price %></div>
+                  <div class="text-center"><%= hotel.price_text %></div>
+              </div>
+            </a>
+            <br>
+
+            </div>
+            <% end %>
+            <br>
         </div>
       </section>
       </div>

@@ -3,8 +3,47 @@
   <div class="box">
     <div class="">
       <div class="row">
-        <h1>Profile</h1>
+        <h1>Réponse</h1>
+
+        <%= simple_form_for [@user] do |f| %>
+            <%= f.input :first_name, label: 'First name'%>
+            <%= f.input :last_name, label: 'Last name'%>
+            <%= f.input :photo, hint: "Nous avons besoin d'une photo de vous pour une animation du mariage..." %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :food, label: 'Un régime alimentaire à signaler?', collection: ["none", "que du gras", "végératien", "vegan", "gluten free"]%>
+            <%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil?'%>
+            <%= f.input :sunday, label: 'On vous compte le dimanche pour la surprise?'%>
+            <%= f.input :train_alarm, label: 'On vous prévient quand les billets de train ouvrent?'%>
+
+            <p class="font-16">Ok maintenant on a besoin de votre aide. Chaque fois qu'on veut regarder un film on met 30min à en choisir un. On profite donc que vous passiez tous par ici pour vous demander 3 films qui selon vous pourraient nous plaire... Si vous inscrivez des films, vous aurez accès à la sélection de tous les autres invités, OMG!!! </p>
+
+            <p class="font-16">Veuillez svp pour cela copier coller un url <a href="http://www.allocine.fr/" target="_blank">allocine</a> 😄</p>
+            <%= f.input :film1, label: 'Film n°1'%>
+            <%= f.input :film2, label: 'Film n°2'%>
+            <%= f.input :film3, label: 'Film n°3'%>
+            <p>Merci pour ce coup de main, on a vraiment hâte de vous vous voir au mariage 😍 !!</p>
+            <%= f.button :submit,"Validate", class: "btn-primary"%>
+          <% end %>
+
+          <%
+require 'open-uri'
+require 'nokogiri'
+
+# ingredient = 'chocolate'
+url = "http://www.allocine.fr/film/fichefilm_gen_cfilm=24944.html"
+
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+
+%>
+<br><br>
+<img src="<%= html_doc.search('.thumbnail-img').attribute('src').value %>">
+<%= html_doc.search('.titlebar-title-lg').text.strip%>
+
       </div>
     </div>
+
+
+
   </div>
 </div>
