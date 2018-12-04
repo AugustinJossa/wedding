@@ -11,7 +11,7 @@
 # end
 
 Hotel.create(
-  name: "•  Les Bains d’Arguin ",
+  name: "Les Bains d’Arguin ",
   star:4,
   website:"http://www.thalazur.fr/",
   desc:"Hotel thalasso spa à 3 min à pied du Tir au Vol et 5 min du Tir au Vol.",
@@ -68,10 +68,10 @@ Hotel.create(
   star:3,
   website:"http://www.hotelduparc-arcachon.com/",
   desc:"Chambres confortables à 7 min à pied du Tir au Vol et à 10 de la plage",
-  adress:"# 5 Avenue du Parc, 33120 Arcachon",
+  adress:"5 Avenue du Parc, 33120 Arcachon",
   phone:"05 56 83 10 58",
   price:"135€",
-  price_text: "Chambre double, réservation pour minimum 3 nuits",
+  price_text: "Chambre double, réservation pour minimum 4 nuits",
   category:"tir au vol",
   pic: "h_hotel_du_parc_hnr8y0"
   )
