@@ -183,7 +183,7 @@ Hotel.create(
 #   puts element.attribute('href').value
 # end
 
-print(Hotel.count)
+# print(Hotel.count)
 
 # require 'open-uri'
 # require 'nokogiri'
