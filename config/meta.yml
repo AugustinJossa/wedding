@@ -1,0 +1,5 @@
+meta_product_name: "S&A"
+meta_title: "Wedding Solène & Augustin"
+meta_description: "Here is our website for our wedding. We are very excited to see you there :)"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@augustinjossa"   # required for Twitter Cards
