@@ -9,6 +9,7 @@
   <%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-home-wedding-link" %>
   <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-home-wedding-link" %>
   <%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-home-wedding-link" %>
+  <%= link_to "Liste", liste_path, class: "navbar-wedding-item navbar-wedding-link" %>
   <%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-home-wedding-link" %>
 
     <% if user_signed_in? %>
@@ -55,6 +56,7 @@
         <li><%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
+        <li><%= link_to "Liste", liste_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
       </ul>
     </div>

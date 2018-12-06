@@ -1,7 +1,7 @@
 <div class="navbar-wedding">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wedding-brand" do %>
-    <%= cl_image_tag("logo2_d2ttog.png", :height=>60, :crop=>"scale") %>
+    <%= cl_image_tag("logo2_d2ttog.png", :height=>50, :crop=>"scale") %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,6 +10,7 @@
       <%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-wedding-link" %>
       <%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %>
       <%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-wedding-link" %>
+      <%= link_to "Liste", liste_path, class: "navbar-wedding-item navbar-wedding-link" %>
       <%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-wedding-link" %>
 
       <%#= link_to t(".sign_up", default: "RSVP"), new_user_session_path, class: "navbar-wedding-item navbar-wedding-link" %>
@@ -23,6 +24,7 @@
         <li><%= link_to "Programme", root_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "Logistique", logistique_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "RSVP", new_guest_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
+        <li><%= link_to "Liste", liste_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
         <li><%= link_to "Extra", extra_path, class: "navbar-wedding-item navbar-wedding-link" %></li>
       </ul>
     </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_192712) do
+ActiveRecord::Schema.define(version: 2018_12_06_213155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,20 @@ ActiveRecord::Schema.define(version: 2018_12_02_192712) do
     t.string "first_name"
     t.string "last_name"
     t.string "food", default: "none"
-    t.boolean "civil_wed"
-    t.boolean "sunday"
     t.string "photo"
     t.string "desc"
     t.string "film1"
     t.string "film2"
     t.string "film3"
     t.boolean "train_alarm"
+    t.string "attending"
+    t.string "address"
+    t.string "town"
+    t.string "citycode"
+    t.string "email"
+    t.string "attending_comment"
+    t.string "civil_wed"
+    t.string "sunday"
   end
 
   create_table "hotels", force: :cascade do |t|

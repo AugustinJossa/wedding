@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/rsvp', to: 'pages#rsvp'
   get '/contact', to: 'pages#contact'
   get '/extra', to: 'pages#extra'
+  get '/liste', to: 'pages#liste'
+  get '/terms', to: 'pages#terms'
 
   resources :guests, only:[:new, :create, :show]
   resources :movies, only:[:new, :create]

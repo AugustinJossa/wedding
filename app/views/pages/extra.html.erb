@@ -1,57 +1,61 @@
-<%= render 'shared/navbar' %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="title">Extras</div>
+<div style="background-color: #FCFCFC">
+  <%= render 'shared/navbar' %>
+  <div class="container">
+    <div class="box-2">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="title">Extras</div>
 
-    <h1>Films</h1>
-    <p class="font-16">Ok maintenant on a besoin de votre aide. Chaque fois qu'on veut regarder un film on met 30min à en choisir un. <br><br>On profite donc que vous passiez tous par ici pour vous demander 3 films qui selon vous pourraient nous plaire... <br>
-    On compte sur vous pour jouer le jeu!</p>
+        <h1>Films</h1>
+        <p class="font-16">Ok maintenant on a besoin de votre aide. Chaque fois qu'on veut regarder un film on met 30min à en choisir un. <br><br>On profite donc que vous passiez tous par ici pour vous demander 3 films qui selon vous pourraient nous plaire... <br>
+        On compte sur vous pour jouer le jeu!</p>
 
-            <p class="font-16">Veuillez svp pour cela copier coller un url <a href="http://www.allocine.fr/" target="_blank">allocine</a> 😄</p>
+        <p class="font-16" style="font-weight: bold">Pour cela, il vous suffit de copier coller un url <a href="http://www.allocine.fr/" target="_blank">allocine</a> 😄</p>
 
-        <%= simple_form_for(@movie,html: { multipart: true } ) do |f| %>
-          <%= f.error_notification %>
-          <%= f.input :url %>
+            <%= simple_form_for(@movie,html: { multipart: true } ) do |f| %>
+              <%= f.error_notification %>
+              <%= f.input :url %>
 
-          <%= f.submit "Add a movie", class: "btn btn-primary" %>
-        <% end %>
+              <%= f.submit "Add a movie", class: "btn btn-primary" %>
+            <% end %>
 
-        <br>
+            <br>
 
-        <p>Merci pour ce coup de main, on a vraiment hâte de vous vous voir au mariage 😍 !!</p>
+            <p>Merci pour ce coup de main, on a vraiment hâte de vous vous voir au mariage 😍 !!</p>
 
-    <br><br>
+        <br><br>
+        </div>
+      </div>
+      <div class="row">
+
+
+    <%
+      require 'open-uri'
+      require 'nokogiri'
+      Movie.all.each do |movie| %>
+
+    <%
+    url = movie.url
+    html_file = open(url).read
+    html_doc = Nokogiri::HTML(html_file) %>
+
+    <div class="col-xs-12 col-sm-3">
+      <div class="movie-box">
+        <a href="<%= movie.url %>" target="_blank">
+          <div class="movie-img">
+          <img src="<%= html_doc.search('.thumbnail-img').attribute('src').value %>"> <br>
+        </div>
+        </a>
+        <div class="movie-title">
+          <%= html_doc.search('.titlebar-title-lg').text.strip%>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
 
+    <% end %>
 
-<%
-  require 'open-uri'
-  require 'nokogiri'
-  Movie.all.each do |movie| %>
-
-<%
-url = movie.url
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file) %>
-
-<div class="col-xs-12 col-sm-3">
-  <div class="movie-box">
-    <a href="<%= movie.url %>" target="_blank">
-      <div class="movie-img">
-      <img src="<%= html_doc.search('.thumbnail-img').attribute('src').value %>"> <br>
-    </div>
-    </a>
-    <div class="movie-title">
-      <%= html_doc.search('.titlebar-title-lg').text.strip%>
+      </div>
     </div>
   </div>
 </div>
 
-<% end %>
-
-  </div>
-</div>
-<%= render 'shared/footer' %>

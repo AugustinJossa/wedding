@@ -1,5 +1,6 @@
-<%= render 'shared/navbar' %>
-<div class="container" style= "min-height: calc(100vh - 140px)">
+<div style="background-color: #FCFCFC">
+  <%= render 'shared/navbar' %>
+  <div class="container" style= "min-height: calc(100vh - 140px)">
   <div class="box">
     <div class="">
       <div class="row">
@@ -8,15 +9,52 @@
         On a trop hâte de vous avoir parmi nous le 30 août. <br> D'ici là on a besoin de quelques infos pour organiser ce bel évènement !<br><br>
 
         <%= simple_form_for [@guest] do |f| %>
-            <%= f.input :first_name, label: 'Prénom'%>
-            <%= f.input :last_name, label: 'Nom'%>
-            <%= f.input :photo, hint: "Nous avons besoin d'une photo de vous pour une animation du mariage..." %>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :first_name, label: 'Prénom'%>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :last_name, label: 'Nom'%>
+            </div>
+            <div class="col-xs-12">
+              <%= f.input :email, label: 'Email'%>
+            </div>
+            <div class="col-xs-12">
+              <%= f.input :address, label: 'Adresse'%>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :town, label: 'Ville'%>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <%= f.input :citycode, label: 'Code Postal'%>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :attending, label: 'Je viens?', collection: ["pas", "oui oui je viens", "oui avec ...", ]%>
+            </div>
+            <div class="col-cs-12 col-sm-6">
+              <%= f.input :attending_comment, label: 'Un +1? des enfants?'%>
+            </div>
+            <div class="col-xs-12">
+              <%= f.input :photo, hint: "Nous avons besoin d'une photo de vous pour une animation du mariage..." %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :food, label: 'Un régime alimentaire à signaler?', collection: ["none", "que du gras", "végératien", "vegan", "gluten free"]%>
-            <%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?'%>
-            <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?'%>
-            <%= f.input :train_alarm, label: 'On vous prévient quand les billets de train ouvrent ?'%>
-            <%= f.button :submit,"Valider", class: "btn-primary"%>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :food, label: 'Un régime alimentaire à signaler?', collection: ["none", "que du gras", "végératien", "vegan", "gluten free"]%>
+            </div>
+            <div class="col-xs-12 col-sm-6"><%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?', collection: ["oui", "non", "je sais pas encore"]%></div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?', collection: ["oui", "non", "je sais pas encore"]%>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?', collection: ["oui", "non", "je sais pas encore"]%>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.input :train_alarm, label: 'On vous prévient quand les billets de train ouvrent ?', collection: ["oui", "non", "je sais pas encore"]%>
+            </div>
+            <div class="col-xs-12">
+              <%= f.button :submit,"Valider", class: "btn-primary", style:"width: 100%"%>
+              <br><br>
+            </div>
           <% end %>
 
       </div>
@@ -25,4 +63,6 @@
 
 
   </div>
+</div>
+
 </div>
