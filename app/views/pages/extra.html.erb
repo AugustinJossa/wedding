@@ -6,16 +6,14 @@
         <div class="col-xs-12">
           <div class="title">Extras</div>
 
-        <h1>Films</h1>
-        <p class="font-16">Ok maintenant on a besoin de votre aide. Chaque fois qu'on veut regarder un film on met 30min à en choisir un. <br><br>On profite donc que vous passiez tous par ici pour vous demander 3 films qui selon vous pourraient nous plaire... <br>
-        On compte sur vous pour jouer le jeu!</p>
+        <h1>Films - we need your help!</h1>
+        <p class="font-16">Rien à voir, mais on met toujours 30min pour choisir un film avec Solène. S'il vous plaît sauvez-nous en nous donnant des idées!!!🙏🙏</p>
 
-        <p class="font-16" style="font-weight: bold">Pour cela, il vous suffit de copier coller un url <a href="http://www.allocine.fr/" target="_blank">allocine</a> 😄</p>
+        <p class="font-16" style="font-weight: bold">Entrez ci dessous un url <a href="http://www.allocine.fr/" target="_blank">allocine</a> 😄</p>
 
             <%= simple_form_for(@movie,html: { multipart: true } ) do |f| %>
               <%= f.error_notification %>
-              <%= f.input :url %>
-
+              <%= f.input :url, label: " " %>
               <%= f.submit "Add a movie", class: "btn btn-primary" %>
             <% end %>
 
