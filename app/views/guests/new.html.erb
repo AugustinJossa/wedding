@@ -29,11 +29,11 @@
               <%= f.input :citycode, label: 'Code Postal'%>
             </div>
             <div class="col-xs-12 col-sm-6">
-              <%= f.input :attending, label: 'Je viens?', collection: ["pas", "oui oui je viens", "oui avec ...", ]%>
+              <%= f.input :attending, label: 'Je viens?', collection: ["pas", "oui oui je viens", "je ne sais pas encore", ]%>
             </div>
-            <div class="col-cs-12 col-sm-6">
-              <%= f.input :attending_comment, label: 'Un +1? des enfants?'%>
-            </div>
+            <!-- <div class="col-cs-12 col-sm-6">
+              <%#= f.input :attending_comment, label: 'Un +1? des enfants?'%>
+            </div> -->
             <div class="col-xs-12">
               <%= f.input :photo, hint: "Photo obligatoire pour l'inscription au mariage" %>
             <%= f.input :photo_cache, as: :hidden %>
@@ -42,14 +42,14 @@
             <div class="col-xs-12 col-sm-6">
               <%= f.input :food, label: 'Un régime alimentaire à signaler?', collection: ["none", "que du gras", "végératien", "vegan", "gluten free"]%>
             </div>
+            <!-- <div class="col-xs-12 col-sm-6">
+              <= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?', collection: ["oui", "non", "je sais pas encore"]%>
+            </div> -->
             <div class="col-xs-12 col-sm-6">
-              <%= f.input :civil_wed, label: 'Dispo le jeudi pour le mariage civil ?', collection: ["oui", "non", "je sais pas encore"]%>
+              <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?', collection: ["oui", "non", "je ne sais pas encore"]%>
             </div>
             <div class="col-xs-12 col-sm-6">
-              <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?', collection: ["oui", "non", "je sais pas encore"]%>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :train_alarm, label: 'On vous prévient quand les billets de train ouvrent ?', collection: ["oui", "non", "je sais pas encore"]%>
+              <%= f.input :civil_wed, label: 'Vous passez à l\'apéro du jeudi?', collection: ["oui", "non", "je ne sais pas encore"]%>
             </div>
             <div class="col-xs-12">
               <%= f.button :submit,"Valider", class: "btn-primary", style:"width: 100%"%>

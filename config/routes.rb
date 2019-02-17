@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/extra', to: 'pages#extra'
   get '/liste', to: 'pages#liste'
   get '/terms', to: 'pages#terms'
+  get '/poutoupetitpd', to: 'pages#poutoupetitpd'
+  get '/minesweeper', to: 'pages#minesweeper'
 
   resources :guests, only:[:new, :create, :show]
   resources :movies, only:[:new, :create]
