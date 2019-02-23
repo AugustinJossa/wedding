@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def dashboard
     @user = current_user
     if @user.code == "plancha4ever"
-      @guests = Guest.all
+      @guests = Guest.all.order(created_at: :desc)
     else
       redirect_to root_path
     end
