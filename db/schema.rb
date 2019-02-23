@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_172422) do
+ActiveRecord::Schema.define(version: 2019_02_23_175044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_172422) do
     t.string "civil_wed"
     t.string "sunday"
     t.integer "table"
+    t.string "sounds"
   end
 
   create_table "hotels", force: :cascade do |t|
