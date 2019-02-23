@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   get '/liste', to: 'pages#liste'
   get '/terms', to: 'pages#terms'
 
-  resources :guests, only:[:new, :create, :show]
+  resources :guests, only:[:new, :create, :show, :edit, :update]
   resources :movies, only:[:new, :create]
 
   resources :users, only:[:edit, :update] do
-    get 'profile'
-    get 'extra'
+    get 'dashboard'
+    # get 'extra'
+    # collection {get :dashboard}
   end
 end

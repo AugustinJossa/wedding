@@ -17,10 +17,21 @@ skip_before_action :authenticate_user!, only: [:new, :create, :index, :show]
     @guest = Guest.find(params[:id])
   end
 
+  def edit
+    @guest = Guest.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @guest = Guest.find(params[:id])
+    @guest.update(guest_params)
+    redirect_to user_dashboard_path(@user.id)
+  end
+
   private
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3, :attending, :address, :town, :citycode, :email, :attending_comment, :attending)
+    params.require(:guest).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3, :attending, :address, :town, :citycode, :email, :attending_comment, :attending, :table)
   end
 
 

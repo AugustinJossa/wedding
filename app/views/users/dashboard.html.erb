@@ -1,0 +1,67 @@
+<div style="background-color: #FCFCFC">
+  <%= render 'shared/navbar' %>
+  <div class="container" style="min-height: 90vh">
+    <div class="box-2">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Dashboard</h1>
+            <table id="" class='table tableau'>
+            <thead class='thead-dark'>
+            <tr>
+              <th style="width:5%" class='white-table-title'>ID</th>
+              <th style="width:10%" class='white-table-title'>Nom</th>
+              <th style="width:15%" class='white-table-title'>Prénom</th>
+              <th style="width:30%" class='white-table-title'>Adresse</th>
+              <th style="width:10%" class='white-table-title'>Mariage</th>
+              <th style="width:10%" class='white-table-title'>Mairie</th>
+              <th style="width:10%" class='white-table-title'>Huîtres</th>
+              <th style="width:10%" class='white-table-title'>N° table</th>
+
+            </tr>
+            </thead>
+            <tbody style= "font-size: 12px">
+              <% unless @guests.nil? %>
+                <% @guests.each do |guest| %>
+                  <tr>
+                    <td><%= guest.id %></td>
+                    <td><%= link_to guest.last_name, guest_path(guest.id) %></td>
+                    <td><%= guest.first_name %></td>
+                    <td><%= "#{guest.address} - #{guest.citycode} #{guest.town}" %></td>
+                    <td>
+                      <% if guest.attending == "oui oui je viens" %> o
+                      <% elsif guest.attending == "pas" %> x
+                      <% else %> -
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if guest.civil_wed == "oui" %> o
+                      <% elsif guest.civil_wed == "non" %> x
+                      <% else %> -
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if guest.sunday == "oui" %> o
+                      <% elsif guest.civil_wed == "non" %> x
+                      <% else %> -
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if guest.attending == "pas" %> -
+                      <% else %>
+                        <%= guest.table %>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+            </table>
+
+        <br><br>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

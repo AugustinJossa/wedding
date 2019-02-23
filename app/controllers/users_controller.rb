@@ -4,6 +4,15 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def dashboard
+    @user = current_user
+    if @user.code == "plancha4ever"
+      @guests = Guest.all
+    else
+      redirect_to root_path
+    end
+  end
+
   def profile
     @movies = Movie.all
   end
@@ -22,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3)
+    params.require(:user).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3, :code)
   end
 
 end

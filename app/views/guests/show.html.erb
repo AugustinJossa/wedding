@@ -1,1 +1,25 @@
-Guest
+<div style="background-color: #FCFCFC">
+  <%= render 'shared/navbar' %>
+  <div class="container">
+    <div class="box-2">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Modifications</h1>
+          <%= simple_form_for @guest do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :table %>
+          <%= f.input :attending, label: 'Je viens?', collection: ["pas", "oui oui je viens", "je ne sais pas encore", ]%>
+          <%= f.input :civil_wed, label: 'Vous passez à l\'apéro du jeudi?', collection: ["oui", "non", "je ne sais pas encore"]%>
+          <%= f.input :sunday, label: 'On vous compte le samedi pour les huîtres ?', collection: ["oui", "non", "je ne sais pas encore"]%>
+
+
+          <%= f.button :submit, "Modifier", class: "btn btn-primary" %>
+          <% end %>
+        <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -14,6 +14,14 @@ class ApplicationController < ActionController::Base
     @hotels_autres = Hotel.where(category: "autres")
   end
 
+  def after_sign_in_path_for(resource)
+      user_dashboard_path(current_user)
+  end
+
+  def after_sign_up_path_for(resource)
+      user_dashboard_path(current_user)
+  end
+
   # def rsvp
   #   # @guest = Guest.rsvp
   # end
