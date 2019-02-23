@@ -28,10 +28,7 @@
                     <td><%= guest.first_name %></td>
                     <td><%= "#{guest.address} - #{guest.citycode} #{guest.town}" %></td>
                     <td>
-                      <% if guest.attending == "oui oui je viens" %> o
-                      <% elsif guest.attending == "pas" %> x
-                      <% else %> -
-                      <% end %>
+                      <%= guest.attending %>
                     </td>
                     <td>
                       <% if guest.civil_wed == "oui" %> o
