@@ -29,7 +29,7 @@
               <%= f.input :citycode, label: 'Code Postal'%>
             </div>
             <div class="col-xs-12 col-sm-6">
-              <%= f.input :attending, label: 'Je viens?', collection: ["pas", "oui oui je viens", "je ne sais pas encore"], default: "oui oui je viens"%>
+              <%= f.input :attending, label: 'Je viens?', collection: ["oui oui je viens", "je ne sais pas encore", "pas"]%>
             </div>
             <!-- <div class="col-cs-12 col-sm-6">
               <%#= f.input :attending_comment, label: 'Un +1? des enfants?'%>
@@ -50,6 +50,9 @@
             </div>
             <div class="col-xs-12 col-sm-6">
               <%= f.input :civil_wed, label: 'Vous passez à l\'apéro du jeudi?', collection: ["oui", "non", "je ne sais pas encore"]%>
+            </div>
+            <div class="col-xs-12">
+              <%= f.input :sounds, label: 'Les 2 sons que vous voulez écouter pendant la soirée'%>
             </div>
             <div class="col-xs-12">
               <%= f.button :submit,"Valider", class: "btn-primary", style:"width: 100%"%>

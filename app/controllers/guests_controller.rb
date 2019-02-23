@@ -31,7 +31,7 @@ skip_before_action :authenticate_user!, only: [:new, :create, :index, :show]
   private
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3, :attending, :address, :town, :citycode, :email, :attending_comment, :attending, :table)
+    params.require(:guest).permit(:first_name, :last_name, :photo, :train_alarm, :food, :civil_wed, :sunday, :desc, :film1, :film2, :film3, :attending, :address, :town, :citycode, :email, :attending_comment, :attending, :table, :sounds)
   end
 
 
