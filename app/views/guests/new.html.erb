@@ -29,7 +29,7 @@
               <%= f.input :citycode, label: 'Code Postal'%>
             </div>
             <div class="col-xs-12 col-sm-6">
-              <%= f.input :attending, label: 'Je viens?', collection: ["oui oui je viens", "je ne sais pas encore", "pas"]%>
+              <%= f.input :attending, label: 'Je viens?', collection: ["oui oui je viens", "je ne sais pas encore", "pas"], default: "oui oui je viens" %>
             </div>
             <!-- <div class="col-cs-12 col-sm-6">
               <%#= f.input :attending_comment, label: 'Un +1? des enfants?'%>
