@@ -7,7 +7,7 @@ skip_before_action :authenticate_user!, only: [:new, :create, :index, :show]
   def create
     @guest = Guest.new(guest_params)
     if @guest.save
-      redirect_to extra_path, notice: "Informations mises à jour!"
+      redirect_to root_path, notice: "Merci de votre réponse!"
     else
       render :new
     end
